@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="3107860a8d053e64aee81036df50dcc2236584be" />
+  <meta name="description" content="서전고등학교의 실패하기사업! 락토오보팀의 예약주문 사이트 입니다.">
+  <meta property="og:type" content="website"> 
+  <meta property="og:title" content="락토오보">
+  <meta property="og:description" content="서전고등학교의 실패하기사업! 락토오보팀의 예약주문 사이트 입니다.">
+  <meta property="og:image" content="https://lacto-ovo.netlify.app/img/logo.jpg">
+  <meta property="og:url" content="https://lacto-ovo.netlify.app/">
+  <link rel="canonical" href="https://lacto-ovo.netlify.app/">
+  <title>락토오보</title>
+  <link href="img\logo.jpg" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="mainTitle">
+      <img src="img\logo.jpg" alt="락토오보" class="logo">
+      <h1 class="mainTitleText">락토오보</h1>
+    </div>
+    <h2 style="margin-bottom: 0px;">락토오보 예약주문 사이트</h2>
+    <span>오늘 예약주문하고 내일 아침 수령하기</span>
+  </header>
+  <div class="main">
+    <fieldset>
+      <div style="display: flex;">
+        <div>학번: <input class="hakbeon" id="hakbeon" type="text" placeholder="예) 1310"><br></div>
+        <div class="div_ireum">이름: <input class="ireum" id="ireum" type="text" placeholder="예) 송지후"><br></div>
+      </div>
+      <div class="menu" style="padding-top: 30px;">
+        <span>수량선택</span>
+        <div class="menu1">
+          <img class="toast" src="img\toast.jpg" alt="토스트">
+          <div class="quantity">
+            <p>비건 토스트 (1,500\)</p>
+            <input class="gae" id="gae" type="number" min="1">
+            <span>개</span>
+            <div class="div_gae"></div>
+          </div>
+        </div>
+      </div>
+      <p class="danger" style="color: red;">※주문내용이 모두 맞는지 다시 한번 확인 부탁드립니다🙏🙏※</p>
+      <center><div id="btn">주문 가능 시간이 아닙니다<br>주문 가능 시간 - 08:00 ~ 20:00 (금, 토 제외)</div></center>
+      <!-- <center><div id="btn">현재 서비스 준비 중입니다<br>빠른 시일 내에 찾아뵐 수 있도록 하겠습니다</div></center> -->
+    </fieldset><br>
+  </div>
+  <center>
+    <span>문의: @sj_lacto_ovo</span>
+    <A href="https://www.instagram.com/sj_lacto_ovo/" target="_blank">
+      <IMG class="instagram" src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="인스타그램">
+    </A>
+  </center><br>
+  <script>
+    const currentDay = new Date().getDay()
+    const currentTime = new Date().getHours()
+    if (currentDay !== 5 & currentDay !== 6 & currentTime >= 8 & currentTime < 20) {
+      document.getElementById("btn").innerHTML = '<button id="submit">주문</button>'
+    }
+  
+    const title = document.querySelector(".mainTitleText")
+    function titleClick() {
+      if (title.style.color === "") {
+        title.style.color = "red";
+      } else if (title.style.color === "red") {
+        title.style.color = "orange";
+      } else if (title.style.color === "orange") {
+        title.style.color = "yellow";
+      } else if (title.style.color === "yellow") {
+        title.style.color = "green";
+      } else if (title.style.color === "green") {
+        title.style.color = "blue";
+      } else if (title.style.color === "blue") {
+        title.style.color = "darkblue";
+      } else if (title.style.color === "darkblue") {
+        title.style.color = "purple";
+      } else if (title.style.color === "purple") {
+        title.style.color = "";
+      }
+    }
+
+    title.addEventListener("click", titleClick);
+  </script>
+  <div id="disqus_thread" style="max-width: 1000px; margin: 0 auto;"></div>
+  <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://lacto-ovo.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>
+    
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDEiQhudpqJsHreYSuQoEZA4M0156scINM",
+      authDomain: "lacto-ovo-f7a42.firebaseapp.com",
+      projectId: "lacto-ovo-f7a42",
+      storageBucket: "lacto-ovo-f7a42.appspot.com",
+      messagingSenderId: "626772753958",
+      appId: "1:626772753958:web:e861c704942c4a7ba7b0e7"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script>
+    const db = firebase.firestore()
+
+    const hakbeon = document.getElementById("hakbeon")
+    const ireum = document.getElementById("ireum")
+    const gae = document.getElementById("gae")
+    document.getElementById("submit").addEventListener("click", (event) => {
+      event.preventDefault()
+      if (hakbeon.value == "" | ireum.value == "" | gae.value < 1) {
+        alert("주문 실패!\n주문 내용을 다시 확인해주세요");
+        if (hakbeon.value == "") {
+          hakbeon.focus()
+        } else if (ireum.value == "") {
+          ireum.focus()
+        } else if (gae.value < 1) {
+          gae.focus()
+        }
+      } else {
+        if (confirm("주문 하시겠습니까?\n추후에 주문내용을 변경하거나 취소할 수 없습니다.") == true){
+          date = Date()
+          db.collection(`${date.substr(0, 15)}`).doc(`${hakbeon.value} ${ireum.value}`).set({
+            개수: gae.value,
+          });
+          alert("주문완료!");
+          hakbeon.value = ""
+          ireum.value = ""
+          gae.value = ""
+        } else {
+          return false;
+        }
+      }
+    });
+  </script>
+  <footer>
+    <span class="developer">Developed by Nunnaerim</span>
+    <A href="https://github.com/Nunnaerim" target="_blank">
+      <IMG class="github" src="https://github.githubassets.com/pinned-octocat.svg" alt="깃허브">
+    </A><br><br>
+    <span class="license">이 페이지에는 ㈜여기어때컴퍼니가 제공한 여기어때 잘난체가 적용되어 있습니다.</span>
+  </footer>
+</body>
+</html>

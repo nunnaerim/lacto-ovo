@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+}
+.mainTitle {
+  display: flex;
+  justify-content: center;
+}
+.mainTitleText {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  font-family: "yg-jalnan" !important;
+  margin: 0px;
+}
+footer {
+  text-align: center;
+  padding-top: 20px;
+}
+.hakbeon {
+  width: 70px;
+}
+.ireum {
+  width: 100px;
+}
+.gae {
+  width: 50px;
+}
+.github {
+  width: 21px;
+  height: 21px;
+}
+.main {
+  width: 430px;
+  height: auto;
+  margin: auto;
+}
+.num {
+  width: 40px;
+}
+.name {
+  width: 100px;
+}
+.danger {
+  text-align: center;
+  font-size: small;
+}
+.toast {
+  width: 100px;
+  height: 100px;
+}
+.menu1 {
+  display: flex;
+}
+.quantity {
+  padding-left: 20px;
+}
+.instagram {
+  width: 21px;
+  height: 21px;
+}
+.license {
+  font-family: serif;
+  font-size: small;
+  color: gray;
+}
+noscript {
+  font-family: serif;
+}
+.div_ireum {
+  margin-left: 10px;
+}
